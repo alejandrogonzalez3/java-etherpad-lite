@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
+[![Build Status](https://travis-ci.com/alejandrogonzalez3/java-etherpad-lite.svg?branch=master)](https://travis-ci.com/alejandrogonzalez3/java-etherpad-lite)
 
 Java Etherpad Lite Client
 =========================
