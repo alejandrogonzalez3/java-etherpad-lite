@@ -3,6 +3,7 @@
 Java Etherpad Lite Client
 =========================
 
+
 A Java client for Etherpad Lite’s HTTP JSON API.
 Etherpad Lite is a collaborative editor provided by the Etherpad Foundation.
 
