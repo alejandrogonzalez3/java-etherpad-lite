@@ -26,7 +26,6 @@ import static org.mockserver.integration.ClientAndServer.startClientAndServer;
 public class EPLiteClientIntegrationTest {
 
 	private EPLiteClient client;
-	//private ClientAndServer mockServer;
 	private static ClientAndServer mockServer;
 
 	/**
