@@ -80,6 +80,7 @@
 			<artifactId>junit-quickcheck-generators</artifactId>
 			<version>0.8.1</version>
 		</dependency>
+
 	</dependencies>
 
 
@@ -167,6 +168,11 @@
 				<version>3.0.0</version>
 				<!-- <configuration> <configLocation>google_checks.xml</configLocation> 
 					</configuration> -->
+			</plugin>
+			<plugin>
+				<groupId>org.pitest</groupId>
+				<artifactId>pitest-maven</artifactId>
+				<version>1.4.3</version>
 			</plugin>
 		</plugins>
 	</build>

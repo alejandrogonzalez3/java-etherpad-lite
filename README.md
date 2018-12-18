@@ -60,3 +60,9 @@ Integration testing requires a copy of EtherpadLite running at http://localhost:
 of a04f17343b51afaa036a7428171dd873469cd85911ab43be0503d29d2acbbd58
 
 Integration tests are not run using `maven test`.
+
+### Plugins for Testing ###
+To execute in the root path of the project
+SpotBugs -> mvn spotbugs:check
+Checkstyle -> mvn checkstyle:checkstyle | Report en /target/site/checkstyle.html
+Pit -> mvn org.pitest:pitest-maven:mutationCoverage | Report en /target/pit-reports
