@@ -4,6 +4,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import etm.core.configuration.EtmManager;
+import etm.core.monitor.EtmMonitor;
+import etm.core.monitor.EtmPoint;
+
 /**
  * A client for talking to Etherpad Lite's HTTP JSON API.<br />
  * <br />
@@ -32,6 +36,8 @@ public class EPLiteClient {
 	private static final String DEFAULT_ENCODING = "UTF-8";
 	/** EPLiteConnection. */
 	private final EPLiteConnection connection;
+	/** monitor JETM. */
+	private static final EtmMonitor etmMonitor = EtmManager.getEtmMonitor();
 
 	/**
 	 * Initializes a new net.gjerull.etherpad.client.EPLiteClient object.
@@ -984,7 +990,13 @@ public class EPLiteClient {
 	 * API >= 1.2
 	 */
 	public final void checkToken() {
-		this.connection.get("checkToken");
+		EtmPoint point = etmMonitor.createPoint("checkToken");
+
+		try {
+			this.connection.get("checkToken");
+		} finally {
+			point.collect();
+		}
 	}
 
 	/**
@@ -993,6 +1005,13 @@ public class EPLiteClient {
 	 * @return boolean
 	 */
 	public final boolean isSecure() {
-		return (this.connection.uri.getPort() == 443);
+		EtmPoint point = etmMonitor.createPoint("isSecure");
+
+		try {
+			return (this.connection.uri.getPort() == 443);
+		} finally {
+			point.collect();
+		}
+
 	}
 }
